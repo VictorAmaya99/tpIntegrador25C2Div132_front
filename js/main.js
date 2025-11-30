@@ -221,3 +221,30 @@ async function init() {
 }
 
 init();
+
+
+// --- Saludo de usuario y botón Salir ---
+document.addEventListener("DOMContentLoaded", () => {
+    const bienvenidaEl = document.getElementById("bienvenidaUsuario");
+    const btnSalir = document.getElementById("btnSalir");
+
+    // Recupera el nombre guardado en index (sessionStorage)
+    const nombre = sessionStorage.getItem("nombreUsuario");
+
+    // Si no hay nombre, redirigir a index.html (comportamiento recomendado)
+    if (!nombre) {
+        // Si preferís NO redirigir, comentá la siguiente línea y descomentá la alternativa abajo.
+        window.location.href = "index.html";
+        // Alternativa: mostrar saludo genérico en vez de redirigir:
+        // bienvenidaEl.textContent = "Bienvenido/a";
+    } else {
+        // Mostrar saludo
+        bienvenidaEl.textContent = `Bienvenido, ${nombre}`;
+    }
+
+    // Botón salir: borra el nombre y vuelve al inicio
+    btnSalir.addEventListener("click", () => {
+        sessionStorage.removeItem("nombreUsuario");
+        window.location.href = "index.html";
+    });
+});
