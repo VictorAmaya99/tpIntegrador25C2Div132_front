@@ -1,9 +1,5 @@
 
 
-
-/* Para la pagina principal */
-
-
 header,
 footer{
     background-color: #96e5dd;
@@ -100,7 +96,7 @@ body{
 }
 
 .pagina-productos .producto img{    
-    max-width: 100%;
+    /* max-width: 100%; */
     width: 250px;
     height: 250px;
     object-fit:contain;
@@ -134,4 +130,4 @@ body{
 
 .pagina-carrito .texto-carrito{
     margin-left: 10px;
-} 
+}

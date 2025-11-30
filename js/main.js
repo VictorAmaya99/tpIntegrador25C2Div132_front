@@ -31,14 +31,14 @@ actualizarCarrito();
 
 document.addEventListener("DOMContentLoaded", () => {
     //cargar header
-    fetch('./header.html')
+    fetch('../frontend/partials/header.html')
     .then(res => res.text())
     .then(data => {
         document.getElementById('header-container').innerHTML = data;
     });
 
     //cargar footer
-    fetch('./footer.html')
+    fetch('../frontend/partials/footer.html')
     .then(res => res.text())
     .then(data => {
         document.getElementById('footer-container').innerHTML = data;
