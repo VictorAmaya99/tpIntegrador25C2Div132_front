@@ -1,0 +1,14 @@
+[
+    {"id": 1, "nombre": "blazer negro", "precio": 80, "rutaImg": "img/campera1.jpg"},
+    {"id": 2, "nombre": "blazer casual", "precio": 70, "rutaImg": "img/campera2.jpg"},
+    {"id": 3, "nombre": "campera tunica", "precio": 95, "rutaImg": "img/campera3.jpg"},
+    {"id": 4, "nombre": "campera de algodon", "precio": 100, "rutaImg": "img/campera4.jpg"},
+    {"id": 5, "nombre": "campera cuero original", "precio": 120, "rutaImg": "img/campera5.jpg"},
+    {"id": 6, "nombre": "campera acolcahada", "precio": 85, "rutaImg": "img/campera6.jpg"},
+    {"id": 7, "nombre": "campera de cuero matelasseada", "precio": 130, "rutaImg": "img/campera7.jpg"},
+    {"id": 8, "nombre": "campera hibrida", "precio": 65, "rutaImg": "img/campera8.jpg"},
+    {"id": 9, "nombre": "campera urbana", "precio": 90, "rutaImg": "img/campera9.jpg"},
+    {"id": 10, "nombre": "campera de paño", "precio": 80, "rutaImg": "img/campera10.jpg"}
+     
+]
+
