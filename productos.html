@@ -12,43 +12,55 @@
     </head>
 
     <body class="pagina-productos">
-
-        <div id="header-container"></div>
+        
+        <header>
+            <div>
+                <h1 class="header-logo"><span class="resaltado">Mi</span>Tiendita</h1>
+            </div>
+                    
+            <nav class="header-nav">
+                <ul>
+                    <label for="barraBusqueda"></label>
+                    <input id="barraBusqueda" type="text" placeholder="Buscar..">
+                     <li>
+                        <button id="btnCarrito" class="btn-carrito" type="button">Carrito <ion-icon name="cart-outline"></ion-icon></button>
+                    </li>
+                    
+                </ul>                
+            </nav>           
+             
+        </header>        
 
         <main>
-            <h2>Mis Productos</h2>
-            <div class="productos-container">
-                <div class="producto">
-                    <img src="img/prod1.jpg" alt="prod1">
-                    <h3>Producto 1</h3>
-                    <p>$1000</p>
-                    <button class="agregar-carrito">Agregar al carrito</button>
-                </div>
-                <div class="producto">
-                    <img src="img/prod2.jpg" alt="prod2">
-                    <h3>Producto 2</h3>
-                    <p>$1500</p>
-                    <button class="agregar-carrito">Agregar al carrito</button>
-                </div>
-                <div class="producto">
-                    <img src="img/prod3.jpg" alt="prod3">
-                    <h3>Producto 3</h3>
-                    <p>$2000</p>
-                    <button class="agregar-carrito">Agregar al carrito</button>
-                </div>
-                <div class="producto">
-                    <img src="img/prod4.jpg" alt="prod4">
-                    <h3 class="nom-producto">Producto 4</h3>
-                    <p>$1800</p>
-                    <button class="agregar-carrito">Agregar al carrito</button>
-                </div>
+
+            <div id="contenedorTitulo">
+                <h2>Nuestros productos</h2>
+                <button id="ordenarPorNombre" class="boton ordenar" type="button">Ordenar por nombre</button>
+                <button id="ordenarPorPrecio" class="boton ordenar" type="button">Ordenar por precio</button>
             </div>
+            
+            <section id="contenedorProductos"></section>
+            
         </main>
 
-        <div id="footer-container"></div>
+        <footer>
+            <p>© 2025 MiTiendita</p>
+        </footer>  
 
+        
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+        <aside id="drawerCarrito">      
+            <button id="cerrarDrawer" class="btn-cerrar">&times;</button>
+              
+            <div class="contenedor-carrito-encabezado">
+                <h3 class="encabezado-carrito">Carrito</h3>
+                <p id="contadorCarrito"> 0 productos</p>
+                <section id="contenedorCarrito"></section>
+            </div>
+            <section id="contenedorVaciarPrecioTotal"></section>
+        </aside>
         
     </body>
 

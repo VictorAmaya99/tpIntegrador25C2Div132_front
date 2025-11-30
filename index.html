@@ -8,25 +8,51 @@
 
         <link rel="stylesheet" href="css/styles.css">
 
-        <script defer src="js/main.js"></script>
-
-        
+        <!-- <script defer src="js/main.js"></script>         -->
     </head>
 
     <body class="pagina-principal">
-        <div id="header-container"></div>
+
+        <header>
+            <div>
+                <h1 class="header-logo"><span class="resaltado">Mi</span>Tiendita</h1>
+            </div>                   
+                   
+        </header>
 
         <main>
             <section class="heroe">
                 <h2>Bienvenido a nuestra tiendita</h2>
                 <p>Los mejores productos al mejor precio</p>
-                <a href="productos.html"><button class="boton">Ver Productos</button></a>
+                
+                <h4>Introducí tu nombre</h4>
+                <form id="form-bienvenida">
+                    <input type="text" id="bienvenida-nombre">
+                    <input class="btn-enviar" type="submit" value="Enviar">
+                </form>
             </section>
+
         </main>
 
-        <div id="footer-container"></div>
+        <footer>
+            <p>© 2025 MiTiendita</p>
+        </footer>   
 
-        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script>
+            // Funcionalidad de la página de bienvenida
+            let formBienvenida = document.getElementById("form-bienvenida");
+
+            formBienvenida.addEventListener("submit", event => {
+                event.preventDefault()
+
+                let nombreUsuario = document.getElementById("bienvenida-nombre").value;
+
+                if(nombreUsuario.length > 0) {
+                    sessionStorage.setItem("nombreUsuario", nombreUsuario);
+                    window.location.href = "productos.html";
+                }
+            });
+        </script>
+        
     </body>
 </html>
