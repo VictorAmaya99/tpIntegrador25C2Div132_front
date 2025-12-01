@@ -38,7 +38,7 @@ function mostrarProductos(array){
             <img src="${a.rutaImg}" alt="${a.nombre}">
             <h3>${a.nombre}</h3>
             <p>$${a.precio}</p>
-            <button onclick="agregarItemCarrito(${a.id})">Agregar al carrito</button>
+            <button class="botonera-agregar-carrito" onclick="agregarItemCarrito(${a.id})">Agregar al carrito</button>
         </div>
         `;
     });

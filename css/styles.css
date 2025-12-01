@@ -2,6 +2,7 @@
 
 header,
 footer{
+    margin: 0;
     background-color: #96e5dd;
     color: rgb(20, 2, 2);    
     box-shadow: 0 2px 0px rgba(1, 39, 70, 0.162);
@@ -50,6 +51,60 @@ body{
     padding: 0;
 }
 
+.bienvenida {
+    min-height: 100vh;          /* que ocupe toda la altura de la pantalla */
+    display: flex;
+    justify-content: center;    /* centro horizontal */
+    align-items: center;
+    background-image: url("../img/fondo.jpg");  /* ruta de tu imagen */
+    background-size: cover;                  /* que cubra toda la pantalla */
+    background-position: center;             /* que se centre */
+    background-repeat: no-repeat;
+}
+
+.pagina-bienvenida {
+    text-align: center;    
+    background: #ffffffd0;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    background-color: #96e5dd;
+    border: 2px, solid;
+
+}
+
+#contenedorTitulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #95af98;
+    color: rgb(37, 37, 160);
+
+}
+
+#bienvenidaUsuario {
+    padding-top: 20px;
+}
+
+.botonera-ordenar {
+    display: flex; 
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: row;
+    padding-top: 12px;
+    padding-bottom: 10px;
+    background-color: #95af98;   
+}
+
+.boton-ordenar {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #030e2c;
+    color: rgb(220, 211, 211);
+    cursor: pointer;
+}
+
 .card-producto img{
     width: 250px;
     height: 250px;
@@ -68,10 +123,19 @@ body{
 #contenedorProductos{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    /* height: 600px; */
-    margin-top: 15px;
-    background-color: #ffffff;
+    justify-content: space-evenly;   
+    /* margin-top: 0px; */
+    background-color: #b2cba2;
+    margin-bottom: 0;
+}
+
+.botonera-agregar-carrito {
+    color: rgb(51, 31, 85);
+    padding: 12px 24px; /* alto | ancho */
+    border-radius: 5px;
+    border-style: hidden;
+    cursor: pointer;
+    background-color: #efdbd9;
 }
 
 #drawerCarrito {
@@ -80,7 +144,7 @@ body{
     right: -350px;  /* Oculto fuera de la pantalla */
     width: 350px;
     height: 100vh;
-    background: #fff;
+    background-color: #f6eeed;
     box-shadow: -2px 0 10px rgba(0,0,0,0.2);
     transition: right 0.3s ease;
     z-index: 9999;
@@ -95,6 +159,13 @@ body{
 #drawerCarrito.open {
     right: 0;
 }
+
+#contadorCarrito {
+    font-size: large;
+    color: darkblue;
+}
+
+/* #bedfe4 */
 
 .btn-cerrar {
     position: absolute;

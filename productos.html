@@ -39,14 +39,17 @@
         </header>        
 
         <main>
-
             <div id="contenedorTitulo">
                 <span id="bienvenidaUsuario" aria-live="polite"></span>
-                <h2>Nuestros productos</h2>              
+                <h2>Nuestros productos</h2>        
+            </div>     
 
-                <button id="ordenarPorNombre" class="boton ordenar" type="button">Ordenar por nombre</button>
-                <button id="ordenarPorPrecio" class="boton ordenar" type="button">Ordenar por precio</button>
+            <div class="botonera-ordenar">
+                <button id="ordenarPorNombre" class="boton-ordenar" type="button">Ordenar por nombre</button>
+                <button id="ordenarPorPrecio" class="boton-ordenar" type="button">Ordenar por precio</button>
             </div>
+              
+            
             
             <section id="contenedorProductos"></section>
             
@@ -64,7 +67,7 @@
             <button id="cerrarDrawer" class="btn-cerrar">&times;</button>
 
             <div class="contenedor-carrito-encabezado">
-                <h3 class="encabezado-carrito">Carrito</h3>
+                <!-- <h3 class="encabezado-carrito">Carrito</h3> -->
                 <p id="contadorCarrito"> 0 productos</p>
                 <section id="contenedorCarrito"></section>
             </div>
