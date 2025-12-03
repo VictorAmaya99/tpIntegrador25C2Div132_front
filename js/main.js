@@ -5,6 +5,7 @@ let productos = [];
 
 let contenedorProductos = document.getElementById("contenedorProductos")
 let barraBusqueda = document.getElementById("barraBusqueda");
+
 let contenedorCarrito = document.getElementById("contenedorCarrito");
 let contenedorVaciarPrecioTotal = document.getElementById("contenedorVaciarPrecioTotal");
 let contadorCarrito = document.getElementById("contadorCarrito");
@@ -13,6 +14,8 @@ let ordenarPorPrecio = document.getElementById("ordenarPorPrecio");
 
 let carrito = [];
 
+const url = "http://localhost:3000/api/productos";
+
 
 /*==================
     FUNCIONES
@@ -20,10 +23,17 @@ let carrito = [];
 // Funcion para cargar los productos
 async function cargarProductos() {
     try {
-        let response = await fetch("json/productos.json");
-        productos = await response.json();
+        // let response = await fetch("json/productos.json");
+        let response = await fetch(url);
+
+        let data = await response.json();
+
+        console.log(data);
+
+        productos = data.payload;
+
         mostrarProductos(productos);
-        console.table(productos);
+        // console.table(productos);
     } catch (error) {
         console.error(error);
     }
@@ -32,16 +42,30 @@ async function cargarProductos() {
 // Funcion para mostrar los productos
 function mostrarProductos(array){
     let cardProducto = "";
-    array.forEach(a => {
+
+    for(let i = 0; i < array.length; i++) {
         cardProducto += `
         <div class="card-producto">
-            <img src="${a.rutaImg}" alt="${a.nombre}">
-            <h3>${a.nombre}</h3>
-            <p>$${a.precio}</p>
-            <button class="botonera-agregar-carrito" onclick="agregarItemCarrito(${a.id})">Agregar al carrito</button>
+            <img src="${array[i].imagen}" alt="${array[i].nombre}">
+            <h3>${array[i].nombre}</h3>
+            <p>$${array[i].precio}</p>
+            <button class="botonera-agregar-carrito" onclick="agregarItemCarrito(${array[i].id})">Agregar al carrito</button>
         </div>
         `;
-    });
+    }    
+    
+
+
+    // array.forEach(a => {
+    //     cardProducto += `
+    //     <div class="card-producto">
+    //         <img src="${a.rutaImg}" alt="${a.nombre}">
+    //         <h3>${a.nombre}</h3>
+    //         <p>$${a.precio}</p>
+    //         <button class="botonera-agregar-carrito" onclick="agregarItemCarrito(${a.id})">Agregar al carrito</button>
+    //     </div>
+    //     `;
+    // });
 
     contenedorProductos.innerHTML = cardProducto;
 }
@@ -83,7 +107,7 @@ function visualizarCarrito(){
     carrito.forEach((e, indice) =>{          
         cardCarrito += `        
         <li class="bloque-item">
-            <img src="${e.rutaImg}" alt="${e.nombre}">
+            <img src="${e.imagen}" alt="${e.nombre}">
             <p class="nombre-item">${e.nombre} - ${e.precio}</p>
             <button class="boton-eliminar" onclick="eliminarProducto(${indice})">Eliminar</button>
         </li>
@@ -211,18 +235,6 @@ cerrarDrawer.addEventListener("click", () => {
     drawerCarrito.classList.remove("open");
 });
 
-
-
-async function init() {
-    loadLocalStorage();
-    await cargarProductos();
-    visualizarCarrito();
-    contadorProd();
-}
-
-init();
-
-
 // --- Saludo de usuario y botón Salir ---
 document.addEventListener("DOMContentLoaded", () => {
     const bienvenidaEl = document.getElementById("bienvenidaUsuario");
@@ -248,3 +260,14 @@ document.addEventListener("DOMContentLoaded", () => {
         window.location.href = "index.html";
     });
 });
+
+
+
+function init() {
+    loadLocalStorage();
+    cargarProductos();
+    visualizarCarrito();
+    contadorProd();
+}
+
+init();
