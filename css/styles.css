@@ -154,6 +154,15 @@ body{
     height: 50px;
 }
 
+.bloque-item {
+    margin-top: 20px;
+    display: flex;          /* Necesario */
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* (opcional) centra verticalmente */
+    gap: 10px;              /* (opcional) separa los elementos dentro */   
+    flex-direction: column;
+}
+
 /* Cuando se abre */
 #drawerCarrito.open {
     right: 0;
@@ -202,3 +211,63 @@ body{
     color: rgb(84, 12, 12);
 }
 #btnSalir:focus { outline: none; }
+
+#contadorCarrito {
+    margin-top: 20px;
+    margin-bottom: 5px; /* o el valor que quieras */
+}
+
+
+.contenedor-carrito-encabezado {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#contenedorCarrito {
+    gap: 15px;
+}
+
+.boton-eliminar {
+    
+    color: rgb(51, 31, 85);
+    padding: 12px 24px; /* alto | ancho */
+    border-radius: 5px;
+    border-style: hidden;
+    cursor: pointer;
+    background-color: #efdbd9;
+}
+
+.boton-vaciar {
+    color: rgb(207, 198, 224);
+    background-color: #623b59;
+    margin-top: 20px;
+    margin-left: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.total-precio {
+   
+    text-align: right;
+    justify-content: flex-start; /* Si es flex container */
+    margin-right: 8px;
+    color: #43203b;
+}
+
+.imprimir-ticket {
+   display: flex;
+   justify-content: center;
+}
+
+#btn-imprimir {
+    margin-top: 15px;
+    background-color: #9b352c;
+    padding: 10px;
+    border-style: none;
+    border-radius: 5px;
+}
+
+aside {
+    overflow-y: auto;   /* Activa scroll vertical */
+}

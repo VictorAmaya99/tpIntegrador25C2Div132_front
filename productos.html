@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, 
         initial-scale=1.0">
         <title>Productos</title>
+        <!-- CDN para usar jsPDF -->
+        <script src="https://unpkg.com/jspdf@latest/dist/jspdf.umd.min.js"></script>
 
         <link rel="stylesheet" href="css/styles.css">
 
@@ -67,11 +69,15 @@
             <button id="cerrarDrawer" class="btn-cerrar">&times;</button>
 
             <div class="contenedor-carrito-encabezado">
-                <!-- <h3 class="encabezado-carrito">Carrito</h3> -->
-                <p id="contadorCarrito"> 0 productos</p>
+                <div id="contadorCarrito">
+                    <p > 0 productos</p>
+                </div>
                 <section id="contenedorCarrito"></section>
             </div>
             <section id="contenedorVaciarPrecioTotal"></section>
+            <div class="imprimir-ticket">
+                <button class="hidden orange-btn" id="btn-imprimir">Imprimir Ticket</button>
+            </div>
         </aside>
         
     </body>
