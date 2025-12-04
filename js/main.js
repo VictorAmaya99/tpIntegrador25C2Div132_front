@@ -59,6 +59,7 @@ function mostrarProductos(array){
         <div class="card-producto">
             <img src="${array[i].imagen}" alt="${array[i].nombre}">
             <h3>${array[i].nombre}</h3>
+            <h5>Categoria: ${array[i].tipo}</h5>
             <p>$${array[i].precio}</p>
             <button class="botonera-agregar-carrito" onclick="agregarItemCarrito(${array[i].id})">Agregar al carrito</button>
         </div>

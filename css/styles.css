@@ -245,6 +245,7 @@ body{
     margin-left: 10px;
     padding: 10px;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .total-precio {
@@ -266,6 +267,7 @@ body{
     padding: 10px;
     border-style: none;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 aside {
