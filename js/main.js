@@ -259,7 +259,7 @@ function visualizarCarrito(){
         cardCarrito += `        
         <li class="bloque-item">
             <img src="${e.imagen}" alt="${e.nombre}">
-            <p class="nombre-item">${e.nombre} - ${e.precio}</p>
+            <p class="nombre-item">${e.nombre} - $${e.precio}</p>
             <button class="boton-eliminar" onclick="eliminarProducto(${indice})">Eliminar</button>
         </li>
         `;
@@ -282,7 +282,7 @@ function vaciarPrecioTotal(){
         let cardVaciarPrecioTotal = `
         <div class="vaciar-precioTotal">
             <button class="boton-vaciar" onclick="vaciarCarrito()">Vaciar carrito</button>
-            <p class="total-precio">Total: ${total}</p>
+            <p class="total-precio">Total: $${total}</p>
         </div>
         `;
 
